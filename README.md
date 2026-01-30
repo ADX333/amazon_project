@@ -1,4 +1,4 @@
-Javascript Amazon Project
+# Javascript Amazon Project
 A full fledged amazon/generic e-marketplace clone
 A simple Amazon-style shopping website built using HTML, CSS, and JavaScript.
 This project demonstrates core frontend concepts such as DOM manipulation, event handling, and cart management.
