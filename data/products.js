@@ -13,6 +13,20 @@ const products = [
       "sports",
       "apparel"
     ]
+  },{
+    id : "abcd",
+    image : 'images/products/S25-Ultra.jpg' ,
+  name : 'Samsung Galaxy S25 - 256 GB',
+  rating : {
+    stars: 4.7,
+    count: 2500
+  },
+  priceCents : 84999,
+  keywords: [
+    "mobile",
+    "phone",
+    "samsung"
+  ]
   },
   {
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
