@@ -77,7 +77,11 @@ forEach((button)=>{
       quantity:1
     });
     }
-    
+    let
+    cart.forEach((item)=>{
+
+      
+    })
     console.log(cart);
   })
 })
