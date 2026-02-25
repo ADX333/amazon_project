@@ -1,7 +1,21 @@
 import{cart} from '../data/cart.js';
 import{products} from '../data/products.js';
-
+import{formatCurrency} from './utils/money.js';
 let cartSummaryHTML='';
+
+function getDate(daysToAdd){
+  const date=new Date();
+  date.setDate(date.getDate()+daysToAdd);
+  return date;
+}
+
+function formatDate(date){
+  return date.toLocaleDateString('en-US',{
+    weekday: 'long',
+    month: 'long',
+    day:'numeric'
+  });
+}
 
 cart.forEach((cartItem)=>{
   const productId=cartItem.productId;
@@ -11,6 +25,9 @@ cart.forEach((cartItem)=>{
       matchingProduct=product;
     }
   });
+  const freeShippingDate=formatDate(getDate(7));
+  const standardShippingDate=formatDate(getDate(3));
+  const expressShippingDate=formatDate(getDate(1));
   cartSummaryHTML+=
   `<div class="cart-item-container">
     <div class="delivery-date">
@@ -26,7 +43,7 @@ cart.forEach((cartItem)=>{
           ${matchingProduct.name}
         </div>
         <div class="product-price">
-          ${matchingProduct.priceCents/100}
+          ${formatCurrency(matchingProduct.priceCents)}
         </div>
         <div class="product-quantity">
           <span>
@@ -48,10 +65,10 @@ cart.forEach((cartItem)=>{
         <div class="delivery-option">
           <input type="radio" checked
             class="delivery-option-input"
-            name="delivery-option-1">
+            name="delivery-option-${matchingProduct.id}">
           <div>
             <div class="delivery-option-date">
-              Tuesday, June 21
+              ${freeShippingDate}
             </div>
             <div class="delivery-option-price">
               FREE Shipping
@@ -61,10 +78,10 @@ cart.forEach((cartItem)=>{
         <div class="delivery-option">
           <input type="radio"
             class="delivery-option-input"
-            name="delivery-option-1">
+            name="delivery-option-${matchingProduct.id}">
           <div>
             <div class="delivery-option-date">
-              Wednesday, June 15
+              ${standardShippingDate}
             </div>
             <div class="delivery-option-price">
               $4.99 - Shipping
@@ -74,10 +91,10 @@ cart.forEach((cartItem)=>{
         <div class="delivery-option">
           <input type="radio"
             class="delivery-option-input"
-            name="delivery-option-1">
+            name="delivery-option-${matchingProduct.id}">
           <div>
             <div class="delivery-option-date">
-              Monday, June 13
+              ${expressShippingDate}
             </div>
             <div class="delivery-option-price">
               $9.99 - Shipping
