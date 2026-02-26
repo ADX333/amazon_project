@@ -1,6 +1,7 @@
-import{cart} from '../data/cart.js';
+import{cart, removeFromCart} from '../data/cart.js';
 import{products} from '../data/products.js';
 import{formatCurrency} from './utils/money.js';
+
 let cartSummaryHTML='';
 
 function getDate(daysToAdd){
@@ -16,6 +17,38 @@ function formatDate(date){
     day:'numeric'
   });
 }
+
+`      <div class="payment-summary">
+          <div class="payment-summary-title">
+            Order Summary
+          </div>
+
+          <div class="payment-summary-row">
+            <div>Items (3):</div>
+            <div class="payment-summary-money">$42.75</div>
+          </div>
+
+          <div class="payment-summary-row">
+            <div>Shipping &amp; handling:</div>
+            <div class="payment-summary-money">$4.99</div>
+          </div>
+
+          <div class="payment-summary-row subtotal-row">
+            <div>Total before tax:</div>
+            <div class="payment-summary-money">$47.74</div>
+          </div>
+
+          <div class="payment-summary-row">
+            <div>Estimated tax (10%):</div>
+            <div class="payment-summary-money">$4.77</div>
+          </div>
+
+          <div class="payment-summary-row total-row">
+            <div>Order total:</div>
+            <div class="payment-summary-money">$52.51</div>
+          </div>`
+
+
 
 cart.forEach((cartItem)=>{
   const productId=cartItem.productId;
@@ -49,10 +82,10 @@ cart.forEach((cartItem)=>{
           <span>
             Quantity: <span class="quantity-label">${cartItem.quantity}</span>
           </span>
-          <span class="update-quantity-link link-primary">
+          <span class="update-quantity-link link-primary js-update-link">
             Update
           </span>
-          <span class="delete-quantity-link link-primary">
+          <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
             Delete
           </span>
         </div>
@@ -108,4 +141,10 @@ cart.forEach((cartItem)=>{
 
 document.querySelector('.js-order-summary').innerHTML=cartSummaryHTML;
 
-console.log(cartSummaryHTML);
+document.querySelectorAll('.js-delete-link').forEach((link) => {
+  link.addEventListener('click',()=>{
+   const productId=link.dataset.productId;
+   removeFromCart(productId);
+   console.log(cart);
+})
+});
