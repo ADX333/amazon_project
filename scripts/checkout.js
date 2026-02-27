@@ -24,7 +24,7 @@ function formatDate(date){
           </div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (6):</div>
             <div class="payment-summary-money">$42.75</div>
           </div>
 
