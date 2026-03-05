@@ -21,7 +21,7 @@ export const products = [
     stars: 4.7,
     count: 2500
   },
-  priceCents : 84999,
+  priceCents : 8499999,
   keywords: [
     "mobile",
     "phone",
