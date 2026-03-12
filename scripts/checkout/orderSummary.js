@@ -2,6 +2,7 @@ import{cart, removeFromCart} from '../../data/cart.js';
 import{products} from '../../data/products.js';
 import{formatCurrency} from '../utils/money.js';
 //import{updateCartQuantity} from 'amazon.js' ;
+import {renderPaymentSummary} from './paymentSummary.js';
 
 
 export function renderOrderSummary(){
@@ -171,6 +172,7 @@ export function renderOrderSummary(){
     const productId=link.dataset.productId;
     removeFromCart(productId);
     renderOrderSummary();
+    renderPaymentSummary();
     
     const container=document.querySelector(`.js-cart-item-container-${productId}`)
 
