@@ -24,7 +24,7 @@ products.forEach((product)=>{
       </div>
 
       <div class="product-price">
-        $ ${formatCurrency(product.priceCents)}
+        ₹ ${formatCurrency(product.priceCents)}
       </div>
 
       <div class="product-quantity-container">
@@ -66,8 +66,11 @@ export function updateCartQuantity(){
     cart.forEach((cartItem)=>{
       cartQuantity+= cartItem.quantity;
     });
-    document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
-}
+    const cartQuantityElement=document.querySelector('.js-cart-quantity');
+    if(cartQuantityElement){
+      cartQuantityElement.innerHTML=cartQuantity;
+}}
+updateCartQuantity();
 
 document.querySelectorAll('.js-addtocart').
 forEach((button)=>{
