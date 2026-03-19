@@ -186,4 +186,4 @@ export function renderOrderSummary(){
 
   document.querySelector('.js-return-to-home-link').innerHTML=`${cartQuantity} items`
 }
-renderOrderSummary();
+//renderOrderSummary();

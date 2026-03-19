@@ -10,7 +10,7 @@ function Cart(localStorageKey){
     quantity:2,
     deliveryId:'1'
   },{
-    productId: "abcd",
+    productId: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
     quantity:1,
     deliveryId:'2'
   }];

@@ -39,8 +39,23 @@ class Clothing extends Product {
     `
   }
 }
- 
-export const products = [
+export let products=[];
+export function loadProducts(func){
+  const xhr= new XMLHttpRequest();
+  xhr.addEventListener('load',()=>{
+    products=JSON.parse(xhr.response).map((productDetails)=>{ 
+  if(productDetails.type=='clothing'){
+    return new Clothing(productDetails);
+  }
+  return new Product(productDetails);
+  });
+  func();
+  });
+  
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
+/*export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -55,20 +70,6 @@ export const products = [
       "sports",
       "apparel"
     ]
-  },{
-    id : "abcd",
-    image : 'images/products/S25-Ultra.jpg' ,
-  name : 'Samsung Galaxy S25 - 256 GB',
-  rating : {
-    stars: 4.7,
-    count: 2500
-  },
-  priceCents : 8499999,
-  keywords: [
-    "mobile",
-    "phone",
-    "samsung"
-  ]
   },
   {
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -720,3 +721,4 @@ export const products = [
   return new Product(productDetails);
 });
 
+*/
