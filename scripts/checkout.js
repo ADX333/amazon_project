@@ -3,11 +3,12 @@ import {renderPaymentSummary} from './checkout/paymentSummary.js';
 //import '../data/cart-class.js';
 import {loadProductsFetch} from '../data/products.js';
 
-
-loadProductsFetch().then(()=>{
+async function loadPage(){
+await loadProductsFetch()
   renderOrderSummary();
   renderPaymentSummary();
-});
+};
+loadPage();
 
 /*loadProducts(()=>{
   renderOrderSummary();
