@@ -2,6 +2,12 @@ import {cart, addToCart} from '../data/cart.js';
 import {products, loadProductsFetch} from '../data/products.js';
 import{formatCurrency} from './utils/money.js';
 
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+if (isLoggedIn !== "true") {
+  window.location.href = "login.html";
+}
+
 loadProductsFetch().then(()=>{
   renderProductsGrid();
 });
