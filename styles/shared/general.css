@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+
+button:hover {
+  transform: scale(1.03);
+}
 /* <p> elements have a default margin on the top
    and bottom. This removes the default margins. */
 p {
@@ -14,6 +18,8 @@ p {
 
 button {
   cursor: pointer;
+  transition: transform 0.3s ease;
+  background-color: rgb(135, 33, 231);
 }
 
 select {
