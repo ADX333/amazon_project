@@ -10,7 +10,7 @@ loginBtn.addEventListener("click", ()=>{
   { username: "dhruv", password: "1111" },
   { username: "Sagartanu", password: "1234" }
 ];
-  if (username || !password){
+  if (!username || !password){
     error.innerText="Please fill all the fields"
     return;
   };

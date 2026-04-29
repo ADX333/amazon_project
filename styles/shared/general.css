@@ -1,6 +1,6 @@
 body {
   font-family: Roboto, Arial;
-  color: rgb(33, 33, 33);
+  color: black;
   /* The <body> element has a default margin of 8px
      on all sides. This removes the default margins. */
   margin: 0;
@@ -18,7 +18,8 @@ p {
 button {
   cursor: pointer;
   transition: transform 0.3s ease;
-  background-color: rgb(135, 33, 231);
+  background-color: black;
+  color:white;
 }
 
 select {
