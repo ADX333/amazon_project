@@ -15,16 +15,14 @@ Remove items from cart
 
 Order summary page
 
-Local storage used to store cart data
+Local storage used to store cart data (LATER UPDATED TO FETCHING CART DATA FROM ONLINE DATABASE USING API) 
 
 Responsive layout
 
 Technologies Used
 
 HTML
-
 CSS
-
 JavaScript (Vanilla JavaScript)
 
 Purpose of Project
