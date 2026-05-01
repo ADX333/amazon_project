@@ -32,7 +32,7 @@ Improving frontend development skills
 This project is created for educational purposes only.
 It is not affiliated with or related to Amazon in any way.
 
-##Credits
+## Credits
 
 Project concept inspired by SuperSimpleDev.
 This version is maintained and modified by Anshuman Dixit.
