@@ -70,12 +70,18 @@
   padding-bottom: 25px;
   padding-left: 25px;
   padding-right: 25px;
+  border-radius: 2%;
 
   border-right: 1px solid rgb(231, 231, 231);
   border-bottom: 1px solid rgb(231, 231, 231);
 
   display: flex;
   flex-direction: column;
+}
+
+.product-container:hover{
+  scale:1.03;
+  transition-duration: 300ms;
 }
 
 .product-image-container {
@@ -153,4 +159,6 @@
   width: 100%;
   padding: 8px;
   border-radius: 50px;
+  background-color: black;
+  color: white;
 }
